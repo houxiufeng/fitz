@@ -4,6 +4,7 @@ import com.dexcoder.assistant.interceptor.PageControl;
 import com.dexcoder.assistant.pager.Pager;
 import com.dexcoder.assistant.persistence.Criteria;
 import com.dexcoder.assistant.persistence.JdbcDao;
+import com.xiaoma.fitz.domain.Test1;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +32,10 @@ public class JdbcDaoImplTest extends BaseTest {
 
     @Test
     public void testJoin() {
-        List<TestVo> testvos = jdbcDao.querySql(TestVo.class, "select a.id, a.name, a.age, b.desc from test1 a left join test2 b on a.user_grade_id = b.id where a.user_grade_id = ?", new Object[]{1});
+        PageControl.performPage(1, 5);
+        jdbcDao.querySql(TestVo.class, "select a.id, a.name, a.age, b.desc from test1 a left join test2 b on a.user_grade_id = b.id where a.user_grade_id = ?", new Object[]{1});
+        Pager p = PageControl.getPager();
+        List<TestVo> testvos = p.getList(TestVo.class);
         for (TestVo vo : testvos) {
             System.out.println( vo.getId() + " " + vo.getName() + " " + vo.getAge() + " " + vo.getDesc());
         }
@@ -112,15 +116,15 @@ public class JdbcDaoImplTest extends BaseTest {
 
 @Test
 public void queryList1() {
-    Test1 user = new Test1();
-    PageControl.performPage(user);
-    jdbcDao.queryList(user);
-    Pager pager = PageControl.getPager();
-    List<Test1> users = pager.getList(Test1.class);
-    System.out.println("总记录数：" + pager.getItemsTotal());
-    for (Test1 us : users) {
-        System.out.println(us.getName() + " " + us.getAge());
-    }
+//    Test1 user = new Test1();
+//    PageControl.performPage(user);
+//    jdbcDao.queryList(user);
+//    Pager pager = PageControl.getPager();
+//    List<Test1> users = pager.getList(Test1.class);
+//    System.out.println("总记录数：" + pager.getItemsTotal());
+//    for (Test1 us : users) {
+//        System.out.println(us.getName() + " " + us.getAge());
+//    }
 }
 
 @Test
