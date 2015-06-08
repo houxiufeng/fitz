@@ -54,12 +54,6 @@
     </div>  
 
     <div id="content" class="no-sidebar"> <!-- Content start -->
-        <div class="top_bar">
-            <ul class="breadcrumb">
-              <li><a href="dashboard.html"><i class="icon-home"></i></a> <span class="divider">/</span></li>
-              <li class="active"><a href="#">Dashboard</a></li>
-            </ul>
-        </div>
 
         <div id="show_area" class="widgets_area">
             welcome to tpo management system
@@ -76,23 +70,12 @@
     <script src="${flatpointPath}/js/library/jquery.collapsible.min.js"></script>
     <script src="${flatpointPath}/js/library/jquery.mCustomScrollbar.min.js"></script>
     <script src="${flatpointPath}/js/library/jquery.uniform.min.js"></script>
-
-    <script src="${flatpointPath}/js/library/jquery.sparkline.min.js"></script>
     <script src="${flatpointPath}/js/library/chosen.jquery.min.js"></script>
-    
-    <script src="${flatpointPath}/js/library/jquery.easytabs.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.autosize-min.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.minicolors.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.tagsinput.js"></script>
-    <script src="${flatpointPath}/js/library/footable/footable.js"></script>
-    <script src="${flatpointPath}/js/library/footable/data-generator.js"></script>
     <script src="${flatpointPath}/js/library/bootstrap-fileupload.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.inputmask.bundle.js"></script>
-
     <script src="${flatpointPath}/js/library/jquery.dataTables.js"></script>
+    
     <script src="${flatpointPath}/js/flatpoint_core.js"></script>
     <script src="${ctx}/js/fitz.js"></script>
-    <script src="${flatpointPath}/js/datatables.js"></script>
     
     <!-- <script type="text/javascript">
         jQuery(function($){

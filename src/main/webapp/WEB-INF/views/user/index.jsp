@@ -375,3 +375,6 @@
         </div>
     </div>
 </div>
+<!-- js -->
+<c:set var="flatpointPath" value="${pageContext.request.contextPath}/flatpoint"/>
+<script src="${flatpointPath}/js/datatables.js"></script>
