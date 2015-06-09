@@ -81,7 +81,8 @@ jQuery(function($) {
   });
 
   $('.expand').collapsible({
-    defaultOpen: 'current,third',
+//    defaultOpen: 'current,third',
+    defaultOpen: 'current',
     cookieName: 'navAct',
     cssOpen: 'subOpened',
     cssClose: 'subClosed',

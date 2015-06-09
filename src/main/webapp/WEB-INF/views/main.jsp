@@ -38,25 +38,38 @@
         </ul>
     </header>
 
+    <!-- menu -->
     <div id="main_navigation" class="blue"> <!-- Main navigation start -->
         <div class="inner_navigation">
             <ul class="main">
-                <li class="active"><a href="dashboard.html"><i class="icon-home"></i> Dashboard</a>
+                <li ><a href="javascript:void(0)"><i class="icon-home"></i> Dashboard</a>
                     <ul class="sub_main">
                         <li><a id="m_user" href="javascript:void(0)">User</a></li>
-                        <li><a href="dashboard_2.html">Dashboard multimedia</a></li>
-                        <li><a href="dashboard_3.html">Dashboard no sidebar</a></li>
+                        <li><a href="javascript:void(0)">Dashboard multimedia</a></li>
+                        
                     </ul>
                 </li>
-                <li class="active"><a href="dashboard.html"><i class="icon-home"></i> Dashboard</a></li>
+                <li><a class="expand" id="current" href="#"><i class="icon-reorder"></i>Forms</a>
+                    <ul class="sub_main">
+                        <li><a href="javascript:void(0)">Form elements</a></li>
+                        <li><a href="javascript:void(0)">Forms advanced</a></li>
+                        <li><a href="javascript:void(0)">Forms layout</a></li>
+                        <li><a href="javascript:void(0)">Form wizards</a></li>
+                        <li><a href="javascript:void(0)">Form validation</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="page_calendar.html"><i class="icon-calendar"></i> Calendar</a></li>
+                <li><a href="page_statistics.html"><i class="icon-signal"></i> Charts & graphs</a></li>
+                
+                
             </ul>
         </div>
-    </div>  
+    </div> 
+    <!-- end menu --> 
 
     <div id="content" class="no-sidebar"> <!-- Content start -->
-
-        <div id="show_area" class="widgets_area">
-            welcome to tpo management system
+        <div id="show_area" style="padding:5px">
         </div>
     </div>
 
@@ -72,17 +85,8 @@
     <script src="${flatpointPath}/js/library/jquery.uniform.min.js"></script>
     <script src="${flatpointPath}/js/library/chosen.jquery.min.js"></script>
     <script src="${flatpointPath}/js/library/bootstrap-fileupload.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.dataTables.js"></script>
     
     <script src="${flatpointPath}/js/flatpoint_core.js"></script>
     <script src="${ctx}/js/fitz.js"></script>
-    
-    <!-- <script type="text/javascript">
-        jQuery(function($){
-        	   //some code here
-            }
-        )
-    </script> -->
-    
   </body>
 </html>
