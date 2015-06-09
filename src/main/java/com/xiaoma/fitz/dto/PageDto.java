@@ -3,7 +3,7 @@ package com.xiaoma.fitz.dto;
 public class PageDto {
 
     private Integer currentPage = 1;
-    private Integer itemsPerPage = 10;
+    private Integer itemsPerPage = 20;
     public Integer getCurrentPage() {
         return currentPage;
     }

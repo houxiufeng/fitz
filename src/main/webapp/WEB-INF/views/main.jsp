@@ -25,7 +25,7 @@
 
   <body>
 
-    <header class="blue"> <!-- Header start -->
+    <header class="light_blue"> <!-- Header start -->
         <a href="#" class="logo_image"><span class="hidden-480">托福21天</span></a>
         <ul class="header_actions">
             <li class="dropdown"><a href="#"><img src="${flatpointPath}/demo/avatar_06.png" alt="User image" class="avatar"> fitz <i class="icon-angle-down"></i></a>
@@ -39,7 +39,7 @@
     </header>
 
     <!-- menu -->
-    <div id="main_navigation" class="blue"> <!-- Main navigation start -->
+    <div id="main_navigation" class="light_blue"> <!-- Main navigation start -->
         <div class="inner_navigation">
             <ul class="main">
                 <li ><a href="javascript:void(0)"><i class="icon-home"></i> Dashboard</a>
@@ -69,7 +69,7 @@
     <!-- end menu --> 
 
     <div id="content" class="no-sidebar"> <!-- Content start -->
-        <div id="show_area" style="padding:5px">
+        <div id="show_area">
         </div>
     </div>
 

@@ -15,7 +15,22 @@ jQuery(function($){
 	});
 	
 	//-------event---------
-	$('.chosen').chosen({width:"75px"});
+	$('.chosen').chosen().change(function(){
+		var itemsPerPage = $(this).val();
+		$.ajax({
+			url: "user/",
+			type: 'get',
+			data: {"itemsPerPage":itemsPerPage},
+			success: function(json) {
+				$("#show_area").html(json);
+				
+			},
+			error: function(xhr, textStatus, errorThrown){
+				alert(errorThrown);
+			}
+		});
+		
+	});
 	$(document).on('click', "#p_user li[class='prev']", function() {
 		alert("1111");
 	});
@@ -23,11 +38,12 @@ jQuery(function($){
 		alert("2222");
 	});
 	$('#p_user li.item').click(function(event) {
-	    var page = $(this).find("a").html();
+		var itemsPerPage = $(".chosen").val();
+		var currentPage = $(this).find("a").html();
 	    $.ajax({
 			url: "user/",
 			type: 'get',
-			data: {"currentPage":page},
+			data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
 			success: function(json) {
 				$("#show_area").html(json);
 

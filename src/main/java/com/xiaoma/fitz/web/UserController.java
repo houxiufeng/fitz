@@ -20,12 +20,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     public String loadData(PageDto pageDto, Model model){
         Pager pager = userService.findAll(pageDto.getCurrentPage(), pageDto.getItemsPerPage());
-        model.addAttribute("records", pager.getList());
-        model.addAttribute("total", pager.getItemsTotal());
-        model.addAttribute("begin", pager.getBeginIndex());
-        model.addAttribute("end", pager.getEndIndex());
-        model.addAttribute("pages",pager.getSlider());
-        model.addAttribute("currentPage", pager.getCurPage());
+        model.addAttribute("pager",pager);
+        model.addAttribute("slider",pager.getSlider());
+        
         return "/user/index";
     } 
 }
