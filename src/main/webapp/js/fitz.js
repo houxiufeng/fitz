@@ -37,30 +37,86 @@ jQuery(function($){
 		});
 		
 	});
-	$(document).on('unload', ".chosen", function() {
-		alert("cccccccccccccccccccccccccc");
-	});
 	
-	$(document).on('click', "#next_user", function() {
-		alert("2222");
+	$(document).on('click', ".next", function() {
+		if(!$(".next.disabled").html()){
+			var itemsPerPage = $(".chosen").val();
+			var currentPage = $(".pagination li.item.active").next().find("a").html();
+		    $.ajax({
+				url: "user/",
+				type: 'get',
+				data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
+				success: function(json) {
+					$("#show_area").html(json);
+
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		}
 	});
-	$(document).on('click', "#last_user", function() {
-		alert("3333");
+	$(document).on('click', ".last", function() {
+		if(!$(".last.disabled").html()){
+			var itemsPerPage = $(".chosen").val();
+			var currentPage = $(".pagination li.item").length;
+		    $.ajax({
+				url: "user/",
+				type: 'get',
+				data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
+				success: function(json) {
+					$("#show_area").html(json);
+
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		}
 	});
-	$(document).on('click', "#first_user", function() {
-		alert("4444");
+	$(document).on('click', ".first", function() {
+		if(!$(".first.disabled").html()){
+			var itemsPerPage = $(".chosen").val();
+			var currentPage = 1;
+		    $.ajax({
+				url: "user/",
+				type: 'get',
+				data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
+				success: function(json) {
+					$("#show_area").html(json);
+
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		}
 	});
-	$(document).on('click', "#pre_user", function() {
-		alert("5555");
+	$(document).on('click', ".prev", function() {
+		if(!$(".prev.disabled").html()){
+			var itemsPerPage = $(".chosen").val();
+			var currentPage = $(".pagination li.item.active").prev().find("a").html();
+		    $.ajax({
+				url: "user/",
+				type: 'get',
+				data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
+				success: function(json) {
+					$("#show_area").html(json);
+
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		}
 	});
 	var loadData = function(url) {
 		alert("aaa");
 	}
 	
-	$(document).on('click',"#p_user li.item",function(){
+	$(document).on('click',".pagination li.item",function(){
 		var itemsPerPage = $(".chosen").val();
 		var currentPage = $(this).find("a").html();
-		alert(cbk);
 	    $.ajax({
 			url: "user/",
 			type: 'get',
