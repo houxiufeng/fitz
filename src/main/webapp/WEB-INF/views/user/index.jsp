@@ -47,13 +47,13 @@
                   <div class="clearfix">
                     <div id="p_user" class="dataTables_paginate paging_bootstrap pagination">
                       <ul>
-                        <li class='prev <c:if test="${pager.curPage == 1}">disabled</c:if>'><a href="javascript:void(0)">&lt;&lt;</a></li>
-                        <li class='prev <c:if test="${pager.curPage == 1}">disabled</c:if>'><a href="javascript:void(0)">&lt;</a></li>
+                        <li id="first_user" class='prev <c:if test="${pager.curPage == 1}">disabled</c:if>'><a href="javascript:void(0)">&lt;&lt;</a></li>
+                        <li id="pre_user" class='prev <c:if test="${pager.curPage == 1}">disabled</c:if>'><a href="javascript:void(0)">&lt;</a></li>
                         <c:forEach items="${slider}" var="page">
                         <li class='item <c:if test="${pager.curPage == page}">active</c:if>'><a href="javascript:void(0)">${page}</a></li>
                         </c:forEach>
-                        <li class='next <c:if test="${pager.curPage == pager.lastPage}">disabled</c:if>'><a href="javascript:void(0)">&gt;</a></li>
-                        <li class='next <c:if test="${pager.curPage == pager.lastPage}">disabled</c:if>'><a href="javascript:void(0)">&gt;&gt;</a></li>
+                        <li id="next_user" class='next <c:if test="${pager.curPage == pager.lastPage}">disabled</c:if>'><a href="javascript:void(0)">&gt;</a></li>
+                        <li id="last_user" class='next <c:if test="${pager.curPage == pager.lastPage}">disabled</c:if>'><a href="javascript:void(0)">&gt;&gt;</a></li>
                       </ul>
                     </div>
                   </div>
@@ -65,5 +65,3 @@
         </div>
     </div>
 </div>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<script src="${ctx}/js/fitz.js"></script>

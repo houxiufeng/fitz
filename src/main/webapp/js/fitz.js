@@ -1,11 +1,14 @@
 jQuery(function($){
-	//-------menu-----------
+	//----------event-------------------------
+	var cbk;
+	//#menu
 	$(document).on('click', "#m_user", function() {
 		$.ajax({
 			url: "user/",
 			type: 'get',
 			success: function(json) {
 				$("#show_area").html(json);
+				cbk = 1;
 
 			},
 			error: function(xhr, textStatus, errorThrown){
@@ -13,6 +16,9 @@ jQuery(function($){
 			}
 		});
 	});
+	
+	//#page
+	
 	
 	//-------event---------
 	$('.chosen').chosen().change(function(){
@@ -31,15 +37,30 @@ jQuery(function($){
 		});
 		
 	});
-	$(document).on('click', "#p_user li[class='prev']", function() {
-		alert("1111");
+	$(document).on('unload', ".chosen", function() {
+		alert("cccccccccccccccccccccccccc");
 	});
-	$(document).on('click', "#p_user li[class='next']", function() {
+	
+	$(document).on('click', "#next_user", function() {
 		alert("2222");
 	});
-	$('#p_user li.item').click(function(event) {
+	$(document).on('click', "#last_user", function() {
+		alert("3333");
+	});
+	$(document).on('click', "#first_user", function() {
+		alert("4444");
+	});
+	$(document).on('click', "#pre_user", function() {
+		alert("5555");
+	});
+	var loadData = function(url) {
+		alert("aaa");
+	}
+	
+	$(document).on('click',"#p_user li.item",function(){
 		var itemsPerPage = $(".chosen").val();
 		var currentPage = $(this).find("a").html();
+		alert(cbk);
 	    $.ajax({
 			url: "user/",
 			type: 'get',
@@ -53,5 +74,6 @@ jQuery(function($){
 			}
 		});
 	});
+	
 })
 
