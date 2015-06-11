@@ -45,17 +45,15 @@
                 <li ><a href="javascript:void(0)"><i class="icon-home"></i> Dashboard</a>
                     <ul class="sub_main">
                         <li><a id="m_user" href="javascript:void(0)">User</a></li>
-                        <li><a href="javascript:void(0)">Dashboard multimedia</a></li>
+                        <li><a href="javascript:void(0)">item1</a></li>
                         
                     </ul>
                 </li>
                 <li><a class="expand" id="current" href="#"><i class="icon-reorder"></i>Forms</a>
                     <ul class="sub_main">
-                        <li><a href="javascript:void(0)">Form elements</a></li>
-                        <li><a href="javascript:void(0)">Forms advanced</a></li>
-                        <li><a href="javascript:void(0)">Forms layout</a></li>
-                        <li><a href="javascript:void(0)">Form wizards</a></li>
-                        <li><a href="javascript:void(0)">Form validation</a></li>
+                        <li><a href="javascript:void(0)">item1</a></li>
+                        <li><a href="javascript:void(0)">item2</a></li>
+                        <li><a href="javascript:void(0)">item3</a></li>
                     </ul>
                 </li>
                 

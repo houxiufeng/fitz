@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<input id="_url" type="hidden" value=""/>
+<input id="_lastPage" type="hidden" value="${pager.lastPage}"/>
 <div class="row-fluid">
     <div class="span12">
         <div class="well light_blue">
