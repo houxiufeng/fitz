@@ -6,7 +6,7 @@ jQuery(function($){
 			data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
 			success: function(json) {
 				$("#show_area").html(json);
-				$('.chosen').chosen();
+				$('.chosen').chosen({background:"green"});
 				$('#_url').val(url);
 			},
 			error: function(xhr, textStatus, errorThrown){

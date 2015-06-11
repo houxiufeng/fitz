@@ -7,6 +7,7 @@
         <div class="well light_blue">
             <div class="well-header">
                 <h5>User Table</h5>
+                <a class="light_blue btn" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
                 <div class="no-search" style="display:inline; float:right; padding:5px">
                     <select class="chosen" style="width:80px">
                         <option value="20" <c:if test="${pager.itemsPerPage == 20}">selected</c:if>>20</option>
@@ -22,20 +23,27 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Avatar</th>
                             <th>Name</th>
                             <th>Age</th>
                             <th>Email</th>
                             <th>Date</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${pager.list}" var="user">
                         <tr>
                             <td>${user.id}</td>
+                            <td>${user.avatar}</td>
                             <td>${user.name }</td>
                             <td>${user.age }</td>
                             <td>${user.email }</td>
                             <td>${user.createdAt }</td>
+                            <td>
+                              <a class="btn" href="javascript:void(0)"><i class="icon-edit"></i></a>
+                              <a class="btn" href="javascript:void(0)"><i class="icon-trash"></i></a>
+                            </td>
                         </tr>
                     </c:forEach>    
                        

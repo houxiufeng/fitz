@@ -44,7 +44,7 @@
             <ul class="main">
                 <li ><a href="javascript:void(0)"><i class="icon-home"></i> Dashboard</a>
                     <ul class="sub_main">
-                        <li><a id="m_user" href="javascript:void(0)">User</a></li>
+                        <li><a id="m_user" href="javascript:void(0)"><i class="icon-user"></i> User</a></li>
                         <li><a href="javascript:void(0)">item1</a></li>
                         
                     </ul>

@@ -5,6 +5,7 @@ import java.util.Date;
 public class User {
 
     private Integer id;
+    private String avatar;
     private String name;
     private Integer age;
     private String email;
@@ -38,6 +39,12 @@ public class User {
     }
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+    public String getAvatar() {
+        return avatar;
+    }
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
     
     
