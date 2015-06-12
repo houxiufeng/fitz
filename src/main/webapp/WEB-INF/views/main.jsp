@@ -66,7 +66,7 @@
     </div> 
     <!-- end menu --> 
 
-    <div id="content" class="no-sidebar"> <!-- Content start -->
+    <div id="content"> <!-- Content start -->
         <div id="show_area">
         </div>
     </div>
@@ -83,8 +83,10 @@
     <script src="${flatpointPath}/js/library/jquery.uniform.min.js"></script>
     <script src="${flatpointPath}/js/library/chosen.jquery.min.js"></script>
     <script src="${flatpointPath}/js/library/bootstrap-fileupload.js"></script>
+    <script src="${flatpointPath}/js/library/jquery.validate.min.js"></script>
     
     <script src="${flatpointPath}/js/flatpoint_core.js"></script>
     <script src="${ctx}/js/fitz.js"></script>
+    <script src="${ctx}/js/validate.js"></script>
   </body>
 </html>

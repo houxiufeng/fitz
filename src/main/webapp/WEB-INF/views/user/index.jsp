@@ -7,7 +7,7 @@
         <div class="well light_blue">
             <div class="well-header">
                 <h5>User Table</h5>
-                <a class="light_blue btn" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
+                <a class="light_blue btn new" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
                 <div class="no-search" style="display:inline; float:right; padding:5px">
                     <select class="chosen" style="width:80px">
                         <option value="20" <c:if test="${pager.itemsPerPage == 20}">selected</c:if>>20</option>

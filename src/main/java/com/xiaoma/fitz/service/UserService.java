@@ -20,4 +20,8 @@ public class UserService {
         return PageControl.getPager();
         
     }
+    
+    public void save(User user) {
+        jdbcDao.save(user);
+    }
 }

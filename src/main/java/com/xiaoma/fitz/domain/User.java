@@ -2,6 +2,8 @@ package com.xiaoma.fitz.domain;
 
 import java.util.Date;
 
+import com.xiaoma.fitz.dto.UserDto;
+
 public class User {
 
     private Integer id;
@@ -47,5 +49,9 @@ public class User {
         this.avatar = avatar;
     }
     
+    public void build(UserDto dto) {
+        this.name = dto.getName();
+        this.age = dto.getAge();
+    }
     
 }
