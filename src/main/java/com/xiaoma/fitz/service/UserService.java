@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.dexcoder.assistant.interceptor.PageControl;
 import com.dexcoder.assistant.pager.Pager;
+import com.dexcoder.assistant.persistence.Criteria;
 import com.dexcoder.assistant.persistence.JdbcDao;
 import com.xiaoma.fitz.domain.User;
 
@@ -30,7 +31,8 @@ public class UserService {
     }
     
     public void update(User user) {
-        jdbcDao.update(user);
+    	Criteria criteria = Criteria.create(User.class).set("name", user.getName()).set("age", user.getAge()).set("email", user.getEmail()).where("id", new Object[]{user.getId()});
+        jdbcDao.update(criteria);
     }
     
     public User getById(Integer id) {

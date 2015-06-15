@@ -30,14 +30,14 @@
                     </div>
                 </div>
                 
-                <!-- <div class="form_row">
+                <!--  <div class="form_row">
                     <label class="field_name align_right">Avatar</label>
                     <div class="field">
                         <div class="fileupload fileupload-new" data-provides="fileupload">
                           <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" /></div>
                           <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                           <div>
-                            <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                            <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input name="avatar" type="file" /></span>
                             <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
                           </div>
                         </div>

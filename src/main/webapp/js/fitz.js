@@ -76,6 +76,7 @@ jQuery(function($){
 		goTo($('#_url').val(),itemsPerPage,currentPage);
 	});
 	
+	//operation
 	$(document).on('click',"a.add",function(){
 		loadForm($('#_url').val() + "/add");
 	});
@@ -105,8 +106,10 @@ jQuery(function($){
 	});
 	
 	$(document).on('click',"a.create",function(){
+		console.log(jQuery("form").serialize());
+		return;
 		validates[$("form").attr("id")](function(){
-			jQuery.ajax({
+			$.ajax({
 				url: jQuery("form").attr("id") + "/create",
 				type: 'post',
 				data:jQuery("form").serialize(),
@@ -121,17 +124,19 @@ jQuery(function($){
 		});
 	});
 	$(document).on('click',"a.update",function(){
-		$.ajax({
-			url: $("form").attr("id") + "/update",
-			type: 'post',
-			data:$("form").serialize(),
-			success: function(json) {
-				$("#show_area").html(json);
-				$('.chosen').chosen();//if have
-			},
-			error: function(xhr, textStatus, errorThrown){
-				alert(errorThrown);
-			}
+		validates[$("form").attr("id")](function(){
+			$.ajax({
+				url: $("form").attr("id") + "/update",
+				type: 'post',
+				data:$("form").serialize(),
+				success: function(json) {
+					$("#show_area").html(json);
+					$('.chosen').chosen();//if have
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
 		});
 	});
 	
