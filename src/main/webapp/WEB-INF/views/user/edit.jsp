@@ -9,24 +9,25 @@
 
             <div class="well-content no-search">
             <form id="user">
+                <input type="hidden" name="id" value="${user.id}" />
                 <div class="form_row">
                     <label class="field_name align_right">Name</label>
                     <div class="field">
-                        <input name="name" class="span4" type="text">
+                        <input name="name" class="span4" type="text" value="${user.name}">
                     </div>
                 </div>
                 
                 <div class="form_row">
                     <label class="field_name align_right">Age</label>
                     <div class="field">
-                        <input name="age" class="span2" type="text">
+                        <input name="age" class="span2" type="text" value="${user.age}">
                     </div>
                 </div>
                 
                 <div class="form_row">
                     <label class="field_name align_right">Email</label>
                     <div class="field">
-                        <input name="email" class="span4" type="text">
+                        <input name="email" class="span4" type="text" value="${user.email}">
                     </div>
                 </div>
                 
@@ -46,8 +47,7 @@
                 
                 <div class="form_row">
                     <div class="field">
-                        <a href="javascript:void(0);" class="btn light_blue submit create">Submit</a>
-                        <!-- <input class="btn light_blue submit create" type="submit" value="Submit"> -->
+                        <a href="javascript:void(0)" class="btn light_blue submit update">Submit</a>
                         <a href="javascript:void(0)" class="btn red cancel">Cancel</a>
                     </div>
                 </div>
@@ -56,13 +56,3 @@
         </div>
     </div>
 </div>
-<c:set var="flatpointPath" value="${pageContext.request.contextPath}/flatpoint"/>
-<script src="${flatpointPath}/js/library/jquery.validate.min.js"></script>
-<script>
-/* jQuery("#user").validate();
-jQuery("a.create").click(function(){
-	if(jQuery("#user").valid()){
-		alert("xxx");
-	}
-}); */
-</script>

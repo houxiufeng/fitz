@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<input id="_url" type="hidden" value=""/>
+<input id="_url" type="hidden" value="user"/>
 <input id="_lastPage" type="hidden" value="${pager.lastPage}"/>
 <div class="row-fluid">
     <div class="span12">
         <div class="well light_blue">
             <div class="well-header">
                 <h5>User Table</h5>
-                <a class="light_blue btn new" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
+                <a class="light_blue btn add" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
                 <div class="no-search" style="display:inline; float:right; padding:5px">
                     <select class="chosen" style="width:80px">
                         <option value="20" <c:if test="${pager.itemsPerPage == 20}">selected</c:if>>20</option>
@@ -41,8 +41,8 @@
                             <td>${user.email }</td>
                             <td>${user.createdAt }</td>
                             <td>
-                              <a class="btn" href="javascript:void(0)"><i class="icon-edit"></i></a>
-                              <a class="btn" href="javascript:void(0)"><i class="icon-trash"></i></a>
+                              <a id="${user.id}" class="btn edit" href="javascript:void(0)"><i class="icon-edit"></i></a>
+                              <a id="${user.id}" class="btn delete" href="javascript:void(0)"><i class="icon-trash"></i></a>
                             </td>
                         </tr>
                     </c:forEach>    
@@ -52,7 +52,9 @@
                 
                 <div class="tableFooter">
                   <div>
-                    <div class="dataTables_info" id="DataTables_Table_0_info">Showing ${pager.beginIndex + 1} to ${pager.endIndex} of ${pager.itemsTotal} entries</div>
+                    <c:if test="${pager.itemsTotal != 0 }">
+                      <div class="dataTables_info" id="DataTables_Table_0_info">Showing ${pager.beginIndex + 1} to ${pager.endIndex} of ${pager.itemsTotal} entries</div>
+                    </c:if>
                   </div>
                   <div class="clearfix">
                     <div class="dataTables_paginate paging_bootstrap pagination">

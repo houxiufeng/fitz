@@ -8,7 +8,6 @@ jQuery(function($){
 			success: function(json) {
 				$("#show_area").html(json);
 				$('.chosen').chosen();
-				$('#_url').val(url);
 			},
 			error: function(xhr, textStatus, errorThrown){
 				alert(errorThrown);
@@ -16,9 +15,9 @@ jQuery(function($){
 		});
 	}
 	
-	var newForm = function(url){
+	var loadForm = function(url){
 		$.ajax({
-			url: url + "/add",
+			url: url,
 			type: 'get',
 			success: function(json) {
 				$("#show_area").html(json);
@@ -30,22 +29,6 @@ jQuery(function($){
 		});
 	}
 	
-	var saveEntity = function(url){
-		console.log("fuck something");
-		$.ajax({
-			url: url + "/create",
-			type: 'post',
-			data:$("form").serialize(),
-			success: function(json) {
-				$("#show_area").html(json);
-				$('.chosen').chosen();//if have
-				$('#_url').val(url);
-			},
-			error: function(xhr, textStatus, errorThrown){
-				alert(errorThrown);
-			}
-		});
-	}
 	
 	//----------event-------------------------
 	//#menu
@@ -93,12 +76,63 @@ jQuery(function($){
 		goTo($('#_url').val(),itemsPerPage,currentPage);
 	});
 	
-	$(document).on('click',"a.new",function(){
-		newForm("user");
+	$(document).on('click',"a.add",function(){
+		loadForm($('#_url').val() + "/add");
 	});
 	
-	$(document).on('click',"a.submit",function(){
-		saveEntity("user");
+	$(document).on('click',"a.edit",function(){
+		loadForm($('#_url').val() + "/edit/" + $(this).attr("id"));
+	});
+	
+	$(document).on('click',"a.cancel",function(){
+		goTo($("form").attr("id"));
+	});
+	
+	$(document).on('click',"a.delete",function(){
+		if(confirm("Delte?")){
+			$.ajax({
+				url: $('#_url').val() + "/delete/" + $(this).attr("id"),
+				type: 'post',
+				success: function(json) {
+					$("#show_area").html(json);
+					$('.chosen').chosen();//if have
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		}
+	});
+	
+	$(document).on('click',"a.create",function(){
+		validates[$("form").attr("id")](function(){
+			jQuery.ajax({
+				url: jQuery("form").attr("id") + "/create",
+				type: 'post',
+				data:jQuery("form").serialize(),
+				success: function(json) {
+					jQuery("#show_area").html(json);
+					jQuery('.chosen').chosen();//if have
+				},
+				error: function(xhr, textStatus, errorThrown){
+					alert(errorThrown);
+				}
+			});
+		});
+	});
+	$(document).on('click',"a.update",function(){
+		$.ajax({
+			url: $("form").attr("id") + "/update",
+			type: 'post',
+			data:$("form").serialize(),
+			success: function(json) {
+				$("#show_area").html(json);
+				$('.chosen').chosen();//if have
+			},
+			error: function(xhr, textStatus, errorThrown){
+				alert(errorThrown);
+			}
+		});
 	});
 	
 })

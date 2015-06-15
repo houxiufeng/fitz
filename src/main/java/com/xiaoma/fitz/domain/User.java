@@ -52,6 +52,8 @@ public class User {
     public void build(UserDto dto) {
         this.name = dto.getName();
         this.age = dto.getAge();
+        this.email = dto.getEmail();
+        this.createdAt = new Date();
     }
     
 }

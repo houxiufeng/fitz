@@ -86,7 +86,7 @@
     <script src="${flatpointPath}/js/library/jquery.validate.min.js"></script>
     
     <script src="${flatpointPath}/js/flatpoint_core.js"></script>
-    <script src="${ctx}/js/fitz.js"></script>
     <script src="${ctx}/js/validate.js"></script>
+    <script src="${ctx}/js/fitz.js"></script>
   </body>
 </html>

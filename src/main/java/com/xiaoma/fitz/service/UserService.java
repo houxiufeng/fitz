@@ -24,4 +24,16 @@ public class UserService {
     public void save(User user) {
         jdbcDao.save(user);
     }
+    
+    public void delete(Integer id) {
+        jdbcDao.delete(User.class, id);
+    }
+    
+    public void update(User user) {
+        jdbcDao.update(user);
+    }
+    
+    public User getById(Integer id) {
+        return jdbcDao.get(User.class, id);
+    }
 }
