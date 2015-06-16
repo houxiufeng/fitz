@@ -35,6 +35,9 @@ jQuery(function($){
 	$(document).on('click', "#m_user", function(){
 		goTo("user");
 	});
+	$(document).on('click', "#m_company", function(){
+		goTo("company");
+	});
 	
 	//#paginate
 	$(document).on('change','.chosen',function(){
@@ -106,8 +109,6 @@ jQuery(function($){
 	});
 	
 	$(document).on('click',"a.create",function(){
-		console.log(jQuery("form").serialize());
-		return;
 		validates[$("form").attr("id")](function(){
 			$.ajax({
 				url: jQuery("form").attr("id") + "/create",

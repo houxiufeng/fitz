@@ -40,6 +40,35 @@ validates.user = function(cbk) {
 	_validate(params);
 }
 
+validates.company = function(cbk) {
+	var params = {};
+	params.rules = {
+			name: {
+				required: true
+			},
+			address: {
+				required: true
+			},
+			email: {
+				email: true
+			}
+	}
+	params.messages={
+			name: {
+				required: "城市名称不能为空！"
+			},
+			address: {
+				required: "地址不能为空！"
+			},
+			email: {
+				email: "格式不正确！"
+			}
+	}
+	params.form = jQuery("#company");
+	params.cbk = cbk;
+	_validate(params);
+}
+
 
 	
 

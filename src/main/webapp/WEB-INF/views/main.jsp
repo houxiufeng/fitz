@@ -26,7 +26,7 @@
   <body>
 
     <header class="light_blue"> <!-- Header start -->
-        <a href="#" class="logo_image"><span class="hidden-480">托福21天</span></a>
+        <a href="#" class="logo_image"><span class="hidden-480">TOEFL21</span></a>
         <ul class="header_actions">
             <li class="dropdown"><a href="#"><img src="${flatpointPath}/demo/avatar_06.png" alt="User image" class="avatar"> fitz <i class="icon-angle-down"></i></a>
                 <ul>
@@ -42,23 +42,16 @@
     <div id="main_navigation" class="light_blue"> <!-- Main navigation start -->
         <div class="inner_navigation">
             <ul class="main">
-                <li ><a href="javascript:void(0)"><i class="icon-home"></i> Dashboard</a>
+                <li ><a class="expand" href="javascript:void(0)" id="current"><i class="icon-home"></i> Dashboard</a>
                     <ul class="sub_main">
                         <li><a id="m_user" href="javascript:void(0)"><i class="icon-user"></i> User</a></li>
-                        <li><a href="javascript:void(0)">item1</a></li>
+                        <li><a id="m_company" href="javascript:void(0)"><i class="icon-apple"></i> Company</a></li>
                         
                     </ul>
                 </li>
-                <li><a class="expand" id="current" href="#"><i class="icon-reorder"></i>Forms</a>
-                    <ul class="sub_main">
-                        <li><a href="javascript:void(0)">item1</a></li>
-                        <li><a href="javascript:void(0)">item2</a></li>
-                        <li><a href="javascript:void(0)">item3</a></li>
-                    </ul>
-                </li>
                 
-                <li><a href="page_calendar.html"><i class="icon-calendar"></i> Calendar</a></li>
-                <li><a href="page_statistics.html"><i class="icon-signal"></i> Charts & graphs</a></li>
+                <li><a href="javascript:void(0)"><i class="icon-calendar"></i> Calendar</a></li>
+                <li><a href="javascript:void(0)"><i class="icon-signal"></i> Charts</a></li>
                 
                 
             </ul>
