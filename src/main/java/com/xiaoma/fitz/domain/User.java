@@ -7,8 +7,8 @@ import com.xiaoma.fitz.dto.UserDto;
 public class User {
 
     private Integer id;
-    private String avatar;
     private String name;
+    private String password;
     private Integer age;
     private String email;
     private Date createdAt;
@@ -42,15 +42,15 @@ public class User {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
-    public String getAvatar() {
-        return avatar;
+    public String getPassword() {
+        return password;
     }
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
     public void build(UserDto dto) {
         this.name = dto.getName();
+        this.password = dto.getPassword();
         this.age = dto.getAge();
         this.email = dto.getEmail();
         this.createdAt = new Date();

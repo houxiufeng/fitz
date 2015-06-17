@@ -14,7 +14,7 @@ import com.xiaoma.fitz.dto.CompanyDto;
 import com.xiaoma.fitz.service.CompanyService;
 
 @Controller
-@RequestMapping("/company")
+@RequestMapping("/app/company")
 public class CompanyController {
 
     @Autowired

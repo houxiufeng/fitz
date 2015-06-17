@@ -23,8 +23,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Avatar</th>
                             <th>Name</th>
+                            <th>Password</th>
                             <th>Age</th>
                             <th>Email</th>
                             <th>Date</th>
@@ -35,8 +35,8 @@
                     <c:forEach items="${pager.list}" var="user">
                         <tr>
                             <td>${user.id}</td>
-                            <td>${user.avatar}</td>
                             <td>${user.name }</td>
+                            <td>${user.password}</td>
                             <td>${user.age }</td>
                             <td>${user.email }</td>
                             <td>${user.createdAt }</td>

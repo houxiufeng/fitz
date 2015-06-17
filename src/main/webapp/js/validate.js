@@ -15,6 +15,9 @@ validates.user = function(cbk) {
         name: {
             required: true
         },
+        password: {
+        	required: true
+        },
         age: {
         	required: true,
         	digits: true
@@ -26,6 +29,9 @@ validates.user = function(cbk) {
 	params.messages={
         name: {
             required: "用户名不能为空！"
+        },
+        password: {
+        	required: "密码不能为空！"
         },
         age: {
         	required: "年龄不能为空！",

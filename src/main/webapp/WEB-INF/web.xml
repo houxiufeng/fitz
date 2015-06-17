@@ -40,11 +40,11 @@
   </filter>
   <filter-mapping>
     <filter-name>invalidUrl</filter-name>
-    <url-pattern>/management/*</url-pattern>
+    <url-pattern>/app/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>cors</filter-name>
-    <url-pattern>/exercise</url-pattern>
+    <url-pattern>/exercise/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
@@ -64,6 +64,6 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>/WEB-INF/views/main.jsp</welcome-file>
+    <welcome-file>/WEB-INF/views/login.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

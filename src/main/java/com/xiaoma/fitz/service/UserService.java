@@ -31,11 +31,19 @@ public class UserService {
     }
     
     public void update(User user) {
-    	Criteria criteria = Criteria.create(User.class).set("name", user.getName()).set("age", user.getAge()).set("email", user.getEmail()).where("id", new Object[]{user.getId()});
+    	Criteria criteria = Criteria.create(User.class).set("name", user.getName()).set("age", user.getAge())
+    	        .set("email", user.getEmail()).set("password", user.getPassword()).where("id", new Object[]{user.getId()});
         jdbcDao.update(criteria);
     }
     
     public User getById(Integer id) {
         return jdbcDao.get(User.class, id);
+    }
+    
+    public User findByNameAndPwd(String name, String password) {
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        return jdbcDao.querySingleResult(user);
     }
 }

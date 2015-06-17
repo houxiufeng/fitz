@@ -11,7 +11,7 @@
 
     <!-- Le styles -->
     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-    <c:set var="flatpointPath" value="${pageContext.request.contextPath}/flatpoint"/>
+    <c:set var="flatpointPath" value="${ctx}/flatpoint"/>
     <link href="${flatpointPath}/css/bootstrap.css" rel="stylesheet">
     <link href="${flatpointPath}/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="${flatpointPath}/css/stylesheet.css" rel="stylesheet">
@@ -28,13 +28,12 @@
     <header class="light_blue"> <!-- Header start -->
         <a href="#" class="logo_image"><span class="hidden-480">TOEFL21</span></a>
         <ul class="header_actions">
-            <li class="dropdown"><a href="#"><img src="${flatpointPath}/demo/avatar_06.png" alt="User image" class="avatar"> fitz <i class="icon-angle-down"></i></a>
+            <li class="dropdown"><a href="#"><img src="${flatpointPath}/demo/avatar_06.png" alt="User image" class="avatar"> ${currentUser.name} <i class="icon-angle-down"></i></a>
                 <ul>
                     <li><a href="#"><i class="icon-user"></i>个人中心</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon-signout"></i> <span class="hidden-768 hidden-480">Logout</span></a></li>
-            <li class="responsive_menu"><a class="iconic" href="#"><i class="icon-reorder"></i></a></li>
+            <li><a id="logout" href="${ctx}/logout"><i class="icon-signout"></i> <span class="hidden-768 hidden-480">Logout</span></a></li>
         </ul>
     </header>
 

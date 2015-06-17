@@ -2,7 +2,7 @@ jQuery(function($){
 	
 	var goTo = function(url, itemsPerPage, currentPage){
 		$.ajax({
-			url: url + "/",
+			url: url,
 			type: 'get',
 			data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
 			success: function(json) {
@@ -111,12 +111,12 @@ jQuery(function($){
 	$(document).on('click',"a.create",function(){
 		validates[$("form").attr("id")](function(){
 			$.ajax({
-				url: jQuery("form").attr("id") + "/create",
+				url: $("form").attr("id") + "/create",
 				type: 'post',
-				data:jQuery("form").serialize(),
+				data:$("form").serialize(),
 				success: function(json) {
-					jQuery("#show_area").html(json);
-					jQuery('.chosen').chosen();//if have
+					$("#show_area").html(json);
+					$('.chosen').chosen();//if have
 				},
 				error: function(xhr, textStatus, errorThrown){
 					alert(errorThrown);

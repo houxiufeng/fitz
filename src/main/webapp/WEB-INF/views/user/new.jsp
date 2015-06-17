@@ -17,6 +17,13 @@
                 </div>
                 
                 <div class="form_row">
+                    <label class="field_name align_right">Password</label>
+                    <div class="field">
+                        <input name="password" class="span4" type="password">
+                    </div>
+                </div>
+                
+                <div class="form_row">
                     <label class="field_name align_right">Age</label>
                     <div class="field">
                         <input name="age" class="span2" type="text">

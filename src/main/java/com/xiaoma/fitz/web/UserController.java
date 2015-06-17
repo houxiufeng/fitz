@@ -1,5 +1,7 @@
 package com.xiaoma.fitz.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dexcoder.assistant.pager.Pager;
 import com.xiaoma.fitz.domain.User;
+import com.xiaoma.fitz.dto.LoginDto;
 import com.xiaoma.fitz.dto.PageDto;
 import com.xiaoma.fitz.dto.UserDto;
 import com.xiaoma.fitz.service.UserService;
+import com.xiaoma.fitz.utils.Fitz;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/app/user")
 public class UserController {
 
     @Autowired
