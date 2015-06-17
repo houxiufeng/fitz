@@ -75,6 +75,29 @@ validates.company = function(cbk) {
 	_validate(params);
 }
 
+validates.login = function(cbk) {
+	var params = {};
+	params.rules = {
+			userName: {
+				required: true
+			},
+			password: {
+				required: true
+			}
+	}
+	params.messages={
+			userName: {
+				required: "用户名不能为空！"
+			},
+			password: {
+				required: "密码不能为空！"
+			}
+	}
+	params.form = jQuery("#login");
+	params.cbk = cbk;
+	_validate(params);
+}
+
 
 	
 

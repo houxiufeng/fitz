@@ -29,7 +29,7 @@
         <div class="login-header blue">
             <h4>TOEFL21</h4>
         </div>
-        <form action="login" method="post">
+        <form id="login" action="login" method="post">
             <div class="login-field">
                 <label for="username">Username</label>
                 <input type="text" name="userName" id="userName" placeholder="Username">
@@ -41,7 +41,7 @@
                 <i class="icon-lock"></i>
             </div>
             <div class="login-button">
-                <button type="submit" class="btn btn-large btn-block blue">Login <i class="icon-arrow-right"></i></button>
+                <button id="loginBtn" type="submit" class="btn btn-large btn-block blue">Login <i class="icon-arrow-right"></i></button>
             </div>
             <div class="forgot-password">
                 <a href="javascript:void(0);">Forgot password?</a>
@@ -54,19 +54,13 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%-- <script src="${flatpointPath}/js/jquery-1.10.2.js"></script> --%>
-    <%-- <script src="${flatpointPath}/js/jquery-ui-1.10.3.js"></script>
-    <script src="${flatpointPath}/js/bootstrap.js"></script>
-
-    <script src="${flatpointPath}/js/library/jquery.collapsible.min.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.mCustomScrollbar.min.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.uniform.min.js"></script>
-    <script src="${flatpointPath}/js/library/chosen.jquery.min.js"></script>
-    <script src="${flatpointPath}/js/library/bootstrap-fileupload.js"></script>
+    <script src="${flatpointPath}/js/jquery-1.10.2.js"></script>
     <script src="${flatpointPath}/js/library/jquery.validate.min.js"></script>
-    
-    <script src="${flatpointPath}/js/flatpoint_core.js"></script>
     <script src="${ctx}/js/validate.js"></script>
-    <script src="${ctx}/js/fitz.js"></script> --%>
+    <script>
+    $("#loginBtn").click(function(){
+    	validates["login"]();
+    });
+    </script>
   </body>
 </html>
