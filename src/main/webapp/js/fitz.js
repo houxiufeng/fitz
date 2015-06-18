@@ -1,5 +1,16 @@
 jQuery(function($){
 	
+   $.ajaxSetup({
+       complete:function(XMLHttpRequest,textStatus){ 
+         var sessionstatus=XMLHttpRequest.getResponseHeader("sessionstatus"); //通过XMLHttpRequest取得响应头，sessionstatus，  
+	         if(sessionstatus=="timeout"){ 
+	        	 alert("登录超时,请重新登录！");
+	        	 //如果超时就处理 ，指定要跳转的页面  
+	        	 window.location.replace("login");
+	         }   
+          }   
+     });
+	
 	var goTo = function(url, itemsPerPage, currentPage){
 		$.ajax({
 			url: url,

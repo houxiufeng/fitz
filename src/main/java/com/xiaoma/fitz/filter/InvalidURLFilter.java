@@ -37,7 +37,11 @@ public class InvalidURLFilter implements Filter{
         }
         if(dofilter){
             if(req.getSession().getAttribute(Fitz.CURRENT_USER) == null) {
-                res.sendRedirect(contextPath + "/login");
+                if (req.getHeader("x-requested-with") != null && req.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {//ajax请求让客户端跳转
+                    res.setHeader("sessionstatus", "timeout");
+                } else {
+                    res.sendRedirect(contextPath + "/login");//普通请求直接跳转
+                }
                 return;
             }
         }
