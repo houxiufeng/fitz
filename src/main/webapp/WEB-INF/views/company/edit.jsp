@@ -8,33 +8,26 @@
             </div>
 
             <div class="well-content no-search">
-            <form id="user">
-                <input type="hidden" name="id" value="${user.id}" />
+            <form id="company">
+                <input type="hidden" name="id" value="${company.id}" />
                 <div class="form_row">
                     <label class="field_name align_right">Name</label>
                     <div class="field">
-                        <input name="name" class="span4" type="text" value="${user.name}">
+                        <input name="name" class="span4" type="text" value="${company.name}">
                     </div>
                 </div>
                 
                 <div class="form_row">
-                    <label class="field_name align_right">Password</label>
+                    <label class="field_name align_right">Address</label>
                     <div class="field">
-                        <input name="password" class="span4" type="password" value="${user.password}">
-                    </div>
-                </div>
-                
-                <div class="form_row">
-                    <label class="field_name align_right">Age</label>
-                    <div class="field">
-                        <input name="age" class="span2" type="text" value="${user.age}">
+                        <input name="address" class="span2" type="text" value="${company.address}">
                     </div>
                 </div>
                 
                 <div class="form_row">
                     <label class="field_name align_right">Email</label>
                     <div class="field">
-                        <input name="email" class="span4" type="text" value="${user.email}">
+                        <input name="email" class="span4" type="text" value="${company.email}">
                     </div>
                 </div>
                 

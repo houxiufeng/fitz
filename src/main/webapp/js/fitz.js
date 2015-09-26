@@ -1,8 +1,19 @@
 jQuery(function($){
 	
+   $.ajaxSetup({
+       complete:function(XMLHttpRequest,textStatus){ 
+         var sessionstatus=XMLHttpRequest.getResponseHeader("sessionstatus"); //通过XMLHttpRequest取得响应头，sessionstatus，  
+	         if(sessionstatus=="timeout"){ 
+	        	 alert("登录超时,请重新登录！");
+	        	 //如果超时就处理 ，指定要跳转的页面  
+	        	 window.location.replace("login");
+	         }   
+          }   
+     });
+	
 	var goTo = function(url, itemsPerPage, currentPage){
 		$.ajax({
-			url: url + "/",
+			url: url,
 			type: 'get',
 			data: {"itemsPerPage":itemsPerPage, "currentPage":currentPage},
 			success: function(json) {
@@ -34,6 +45,9 @@ jQuery(function($){
 	//#menu
 	$(document).on('click', "#m_user", function(){
 		goTo("user");
+	});
+	$(document).on('click', "#m_company", function(){
+		goTo("company");
 	});
 	
 	//#paginate
@@ -106,16 +120,14 @@ jQuery(function($){
 	});
 	
 	$(document).on('click',"a.create",function(){
-		console.log(jQuery("form").serialize());
-		return;
 		validates[$("form").attr("id")](function(){
 			$.ajax({
-				url: jQuery("form").attr("id") + "/create",
+				url: $("form").attr("id") + "/create",
 				type: 'post',
-				data:jQuery("form").serialize(),
+				data:$("form").serialize(),
 				success: function(json) {
-					jQuery("#show_area").html(json);
-					jQuery('.chosen').chosen();//if have
+					$("#show_area").html(json);
+					$('.chosen').chosen();//if have
 				},
 				error: function(xhr, textStatus, errorThrown){
 					alert(errorThrown);

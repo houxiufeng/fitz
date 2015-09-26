@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<input id="_url" type="hidden" value="user"/>
+<input id="_url" type="hidden" value="company"/>
 <input id="_lastPage" type="hidden" value="${pager.lastPage}"/>
 <div class="row-fluid">
     <div class="span12">
@@ -24,25 +24,23 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Password</th>
-                            <th>Age</th>
+                            <th>Address</th>
                             <th>Email</th>
                             <th>Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${pager.list}" var="user">
+                    <c:forEach items="${pager.list}" var="company">
                         <tr>
-                            <td>${user.id}</td>
-                            <td>${user.name }</td>
-                            <td>${user.password}</td>
-                            <td>${user.age }</td>
-                            <td>${user.email }</td>
-                            <td>${user.createdAt }</td>
+                            <td>${company.id}</td>
+                            <td>${company.name }</td>
+                            <td>${company.address }</td>
+                            <td>${company.email }</td>
+                            <td>${company.createdAt }</td>
                             <td>
-                              <a id="${user.id}" class="btn edit" href="javascript:void(0)"><i class="icon-edit"></i></a>
-                              <a id="${user.id}" class="btn delete" href="javascript:void(0)"><i class="icon-trash"></i></a>
+                              <a id="${company.id}" class="btn edit" href="javascript:void(0)"><i class="icon-edit"></i></a>
+                              <a id="${company.id}" class="btn delete" href="javascript:void(0)"><i class="icon-trash"></i></a>
                             </td>
                         </tr>
                     </c:forEach>    

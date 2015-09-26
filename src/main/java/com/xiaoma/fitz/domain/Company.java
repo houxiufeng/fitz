@@ -2,14 +2,13 @@ package com.xiaoma.fitz.domain;
 
 import java.util.Date;
 
-import com.xiaoma.fitz.dto.UserDto;
+import com.xiaoma.fitz.dto.CompanyDto;
 
-public class User {
+public class Company {
 
     private Integer id;
     private String name;
-    private String password;
-    private Integer age;
+    private String address;
     private String email;
     private Date createdAt;
     public Integer getId() {
@@ -24,11 +23,11 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getAge() {
-        return age;
+    public String getAddress() {
+        return address;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAddress(String address) {
+        this.address = address;
     }
     public String getEmail() {
         return email;
@@ -36,22 +35,16 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    
     public Date getCreatedAt() {
         return createdAt;
     }
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public void build(UserDto dto) {
+    public void build(CompanyDto dto) {
         this.name = dto.getName();
-        this.password = dto.getPassword();
-        this.age = dto.getAge();
+        this.address = dto.getAddress();
         this.email = dto.getEmail();
         this.createdAt = new Date();
     }

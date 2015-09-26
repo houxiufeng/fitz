@@ -8,6 +8,11 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.xiaoma.fitz.utils.Fitz;
+
 
 public class InvalidURLFilter implements Filter{
 
@@ -18,8 +23,30 @@ public class InvalidURLFilter implements Filter{
     }
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        chain.doFilter(req, res);
+    public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) arg0;
+        HttpServletResponse res  =(HttpServletResponse) arg1;
+        String[] noFilters = new String[] { "/something" };
+        String contextPath = req.getContextPath();
+        String uri = req.getRequestURI();
+        boolean dofilter = true;
+        for(String noFilter: noFilters){
+            if(uri.indexOf(noFilter) != -1){
+               dofilter = false; 
+            }
+        }
+        if(dofilter){
+            if(req.getSession().getAttribute(Fitz.CURRENT_USER) == null) {
+                if (req.getHeader("x-requested-with") != null && req.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {//ajax请求让客户端跳转
+                    res.setHeader("sessionstatus", "timeout");
+                } else {
+                    res.sendRedirect(contextPath + "/login");//普通请求直接跳转
+                }
+                return;
+            }
+        }
+        System.out.println(uri);
+        chain.doFilter(arg0, arg1);
     }
 
     @Override
