@@ -8,18 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <base href="${pageContext.request.contextPath}/" />
 
     <!-- Le styles -->
-    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-    <c:set var="flatpointPath" value="${pageContext.request.contextPath}/flatpoint"/>
-    <link href="${flatpointPath}/css/bootstrap.css" rel="stylesheet">
-    <link href="${flatpointPath}/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="${flatpointPath}/css/stylesheet.css" rel="stylesheet">
-    <link href="${flatpointPath}/icon/font-awesome.css" rel="stylesheet">
+    <link href="flatpoint/css/bootstrap.css" rel="stylesheet">
+    <link href="flatpoint/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="flatpoint/css/stylesheet.css" rel="stylesheet">
+    <link href="flatpoint/icon/font-awesome.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="${flatpointPath}/js/html5shiv.js"></script>
+      <script src="flatpoint/js/html5shiv.js"></script>
     <![endif]-->
   </head>
 
@@ -54,9 +53,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="${flatpointPath}/js/jquery-1.10.2.js"></script>
-    <script src="${flatpointPath}/js/library/jquery.validate.min.js"></script>
-    <script src="${ctx}/js/validate.js"></script>
+    <script src="flatpoint/js/jquery-1.10.2.js"></script>
+    <script src="flatpoint/js/library/jquery.validate.min.js"></script>
+    <script src="js/validate.js"></script>
     <script>
     $("#loginBtn").click(function(){
     	validates["login"]();

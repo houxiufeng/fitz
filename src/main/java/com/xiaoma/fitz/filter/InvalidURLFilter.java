@@ -45,7 +45,6 @@ public class InvalidURLFilter implements Filter{
                 return;
             }
         }
-        System.out.println(uri);
         chain.doFilter(arg0, arg1);
     }
 

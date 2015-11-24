@@ -44,10 +44,10 @@ jQuery(function($){
 	//----------event-------------------------
 	//#menu
 	$(document).on('click', "#m_user", function(){
-		goTo("user");
+		goTo("app/user");
 	});
 	$(document).on('click', "#m_company", function(){
-		goTo("company");
+		goTo("app/company");
 	});
 	
 	//#paginate
@@ -100,7 +100,7 @@ jQuery(function($){
 	});
 	
 	$(document).on('click',"a.cancel",function(){
-		goTo($("form").attr("id"));
+		goTo("app/" + $("form").attr("id"));
 	});
 	
 	$(document).on('click',"a.delete",function(){
@@ -122,7 +122,7 @@ jQuery(function($){
 	$(document).on('click',"a.create",function(){
 		validates[$("form").attr("id")](function(){
 			$.ajax({
-				url: $("form").attr("id") + "/create",
+				url: "app/" + $("form").attr("id") + "/create",
 				type: 'post',
 				data:$("form").serialize(),
 				success: function(json) {
@@ -138,7 +138,7 @@ jQuery(function($){
 	$(document).on('click',"a.update",function(){
 		validates[$("form").attr("id")](function(){
 			$.ajax({
-				url: $("form").attr("id") + "/update",
+				url: "app/" + $("form").attr("id") + "/update",
 				type: 'post',
 				data:$("form").serialize(),
 				success: function(json) {

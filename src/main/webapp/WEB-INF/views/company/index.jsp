@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<input id="_url" type="hidden" value="company"/>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<input id="_url" type="hidden" value="app/company"/>
 <input id="_lastPage" type="hidden" value="${pager.lastPage}"/>
 <div class="row-fluid">
     <div class="span12">
-        <div class="well light_blue">
+        <div class="well grey">
             <div class="well-header">
-                <h5>User Table</h5>
-                <a class="light_blue btn add" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a>
+                <h5>Company Table</h5>
+                <!-- <a class="grey btn add" href="javascript:void(0)" style="margin:5px" ><i class="icon-plus"></i>Add</a> -->
                 <div class="no-search" style="display:inline; float:right; padding:5px">
                     <select class="chosen" style="width:80px">
                         <option value="20" <c:if test="${pager.itemsPerPage == 20}">selected</c:if>>20</option>
@@ -15,6 +16,7 @@
                         <option value="100" <c:if test="${pager.itemsPerPage == 100}">selected</c:if>>100</option>
                     </select>
                   </div>
+                <a class="grey btn add" href="javascript:void(0)" style="float:right; margin:5px" ><i class="icon-plus"></i>Add</a>
             </div>
 
             <div class="well-content">
@@ -37,7 +39,7 @@
                             <td>${company.name }</td>
                             <td>${company.address }</td>
                             <td>${company.email }</td>
-                            <td>${company.createdAt }</td>
+                            <td><fmt:formatDate value="${company.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <td>
                               <a id="${company.id}" class="btn edit" href="javascript:void(0)"><i class="icon-edit"></i></a>
                               <a id="${company.id}" class="btn delete" href="javascript:void(0)"><i class="icon-trash"></i></a>
